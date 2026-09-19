@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Reishabh Portfolio · Flight-Deck Dark System ---- */
+  --color-base: #060609;
+  --color-base-2: #0a0a11;
+  --color-surface: #0d0e17;
+  --color-surface-2: #11131f;
+  --color-surface-3: #161927;
+  --color-line: #1e2131;
+  --color-line-bright: #2b2f47;
+  --color-ink: #e9ebf4;
+  --color-ink-dim: #9aa0b8;
+  --color-ink-faint: #61657a;
+  --color-violet: #8b5cf6;
+  --color-violet-deep: #6d28d9;
+  --color-violet-soft: #a78bfa;
+  --color-cyan: #22d3ee;
+  --color-magenta: #e879f9;
+  --color-success: #4ade80;
+  --color-warning: #facc15;
+  --color-error: #f87171;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --shadow-glow-cyan: 0 0 24px rgba(34, 211, 238, 0.25);
+  --shadow-glow-violet: 0 0 32px rgba(139, 92, 246, 0.28);
+}
+
+/* ---------- Base ---------- */
+html {
+  scrollbar-color: #2b2f47 #060609;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.45);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #060609;
+}
+::-webkit-scrollbar-thumb {
+  background: #242a41;
+  border-radius: 8px;
+  border: 2px solid #060609;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* ---------- Film grain / materiality ---------- */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- HUD corner brackets ---------- */
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before,
+.hud-corner::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+.hud-corner::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-violet);
+  border-left: 2px solid var(--color-violet);
+  border-top-left-radius: 6px;
+}
+.hud-corner::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-violet);
+  border-right: 2px solid var(--color-violet);
+  border-bottom-right-radius: 6px;
+}
+.hud-corner:hover::before,
+.hud-corner:hover::after {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 10px;
+}
+
+/* ---------- Glitch heading ---------- */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  opacity: 0;
+}
+.glitch:hover::before {
+  opacity: 0.85;
+  animation: glitch-a 0.35s steps(2, end) infinite;
+  color: var(--color-cyan);
+  transform: translate(-2px, -1px);
+}
+.glitch:hover::after {
+  opacity: 0.85;
+  animation: glitch-b 0.4s steps(2, end) infinite;
+  color: var(--color-magenta);
+  transform: translate(2px, 1px);
+}
+@keyframes glitch-a {
+  0% { clip-path: inset(12% 0 62% 0); }
+  25% { clip-path: inset(58% 0 20% 0); }
+  50% { clip-path: inset(8% 0 75% 0); }
+  75% { clip-path: inset(42% 0 38% 0); }
+  100% { clip-path: inset(70% 0 6% 0); }
+}
+@keyframes glitch-b {
+  0% { clip-path: inset(80% 0 2% 0); }
+  25% { clip-path: inset(25% 0 55% 0); }
+  50% { clip-path: inset(65% 0 12% 0); }
+  75% { clip-path: inset(10% 0 70% 0); }
+  100% { clip-path: inset(45% 0 34% 0); }
+}
+
+/* ---------- Form inputs ---------- */
+.hud-input {
+  background-color: var(--color-surface-3);
+}
+.hud-input:focus {
+  border-color: var(--color-violet);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+}
+.hud-input::placeholder {
+  color: var(--color-ink-faint);
+}
+
+/* ---------- Caret blink ---------- */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret {
+  animation: blink 1.1s step-end infinite;
+}
+
+/* ---------- Gradient shimmer text ---------- */
+.shimmer-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-ink) 30%,
+    var(--color-violet-soft) 48%,
+    var(--color-cyan) 58%,
+    var(--color-ink) 72%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+@keyframes shimmer {
+  to { background-position: -220% center; }
+}
+
+/* ---------- Radar sweep ---------- */
+@keyframes radar {
+  to { transform: rotate(360deg); }
+}
+.radar-sweep {
+  background: conic-gradient(
+    from 0deg,
+    rgba(139, 92, 246, 0.55) 0deg,
+    rgba(34, 211, 238, 0.12) 55deg,
+    transparent 90deg
+  );
+  animation: radar 5.5s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+  55% { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 36s linear infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* ---------- Verified grid backdrop ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(120, 120, 160, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 160, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret,
+  .shimmer-text,
+  .radar-sweep,
+  .pulse-dot,
+  .ticker-track,
+  .float-slow,
+  .glitch::before,
+  .glitch::after {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

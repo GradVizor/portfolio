@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b0c14"/>
+      <stop offset="1" stop-color="#140f26"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#8b5cf6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#bg)"/>
+
+  <!-- grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04">
+    <path d="M0 100H900M0 200H900M0 300H900M0 400H900M0 500H900M0 600H900"/>
+    <path d="M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700M600 0V700M700 0V700M800 0V700"/>
+  </g>
+
+  <circle cx="450" cy="340" r="290" fill="url(#glow)"/>
+
+  <!-- MCU === -->
+  <rect x="360" y="285" width="180" height="110" rx="8" fill="#12141f" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="450" y="330" text-anchor="middle" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="3">STM32F446RE</text>
+  <text x="450" y="352" text-anchor="middle" fill="#61657a" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2">CORTEX-M4 · 180 MHZ</text>
+
+  <!-- pads -->
+  <g fill="#22d3ee">
+    <rect x="346" y="295" width="6" height="6"/><rect x="346" y="315" width="6" height="6"/>
+    <rect x="346" y="335" width="6" height="6"/><rect x="346" y="355" width="6" height="6"/>
+    <rect x="346" y="375" width="6" height="6"/>
+    <rect x="548" y="295" width="6" height="6"/><rect x="548" y="315" width="6" height="6"/>
+    <rect x="548" y="335" width="6" height="6"/><rect x="548" y="355" width="6" height="6"/>
+    <rect x="548" y="375" width="6" height="6"/>
+  </g>
+
+  <!-- I2C -->
+  <path d="M349 309H180" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="110" y="289" width="70" height="40" rx="4" fill="#11131f" stroke="#22d3ee" stroke-opacity="0.7" stroke-width="1.2"/>
+  <text x="145" y="314" text-anchor="middle" fill="#22d3ee" font-family="JetBrains Mono, monospace" font-size="11">I2C</text>
+
+  <!-- SPI -->
+  <path d="M349 340H230" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="140" y="318" width="90" height="44" rx="4" fill="#11131f" stroke="#8b5cf6" stroke-opacity="0.7" stroke-width="1.2"/>
+  <text x="185" y="345" text-anchor="middle" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="11">SPI · DMA</text>
+
+  <!-- UART -->
+  <path d="M349 340H470V470" stroke="#e879f9" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="460" y="478" width="110" height="44" rx="4" fill="#11131f" stroke="#e879f9" stroke-opacity="0.7" stroke-width="1.2"/>
+  <text x="515" y="505" text-anchor="middle" fill="#e879f9" font-family="JetBrains Mono, monospace" font-size="11">UART</text>
+
+  <!-- DMA memory -->
+  <path d="M551 309H720" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="720" y="279" width="70" height="60" rx="4" fill="#11131f" stroke="#4ade80" stroke-opacity="0.7" stroke-width="1.2"/>
+  <text x="755" y="304" text-anchor="middle" fill="#4ade80" font-family="JetBrains Mono, monospace" font-size="10">DMA</text>
+  <text x="755" y="322" text-anchor="middle" fill="#4ade80" font-family="JetBrains Mono, monospace" font-size="10">ENGINE</text>
+
+  <!-- signal traces -->
+  <g stroke="#a78bfa" stroke-opacity="0.5">
+    <path d="M110 318l-30 0M110 348l-30 0" stroke-width="1"/>
+    <circle cx="80" cy="318" r="3"/><circle cx="80" cy="348" r="3"/>
+  </g>
+
+  <!-- corner marks -->
+  <g stroke="#2b2f47">
+    <path d="M20 20V80M20 20H80M880 680V620M880 680H820" stroke-width="2"/>
+  </g>
+
+  <text x="30" y="660" fill="#61657a" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">BARE-METAL · NO HAL</text>
+  <text x="870" y="38" text-anchor="end" fill="#61657a" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">DRV_BUS.SVG</text>
+</svg>
