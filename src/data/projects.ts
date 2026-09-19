@@ -108,9 +108,9 @@ export const projects: Project[] = [
     title: "MIRA — RL Robotic Arm",
     subtitle: "Robotic Arm Testbed for Reinforcement Learning",
     summary:
-      "A dedicated robotic arm platform designed as a testbed for reinforcement learning and machine learning — closing the gap between simulation-trained policies and real-hardware manipulation.",
+      "A dedicated robotic arm platform designed as a testbed for reinforcement learning and machine learning — closing the gap between simulation-trained policies and real-hardware manipulation. The hardware and mechanical design are based on the open-source SO-ARM 100/101 arm — a community-standard, 3D-printed manipulator widely adopted in robot-learning research.",
     highlights: [
-      "Custom robotic arm hardware built specifically for RL/ML research on real manipulation tasks.",
+      "Hardware and mechanical build based on the SO-ARM 100/101 — an open-source 3D-printed arm design widely used across the robot-learning community.",
       "Wireless-commanded platform enabling model-in-the-loop training and evaluation.",
       "Scaffolding for sim-to-real transfer of learned control policies.",
     ],
