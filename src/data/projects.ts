@@ -208,19 +208,11 @@ export const experience: ExperienceItem[] = [
     summary:
       "Selected as one of the top 15–20 students from a pool of 500+ applicants for a year-long, credit-bearing industrial internship. Transitioned from foundational aerial robotics to deploying advanced autonomy for defense applications — owning hardware integration, data-flow optimization and embedded AI across UAV software/hardware stacks.",
     items: [
-      "Designed a proprietary, low-latency UAV video streaming stack utilizing WFB-ng protocols (OpenHD/QOpenHD lineage), optimized for high-reliability 5.8 GHz operation.",
+      "Designed a proprietary, low-latency UAV video streaming stack utilizing WFB-ng protocols, optimized for high-reliability 2.4/5.8 GHz operation.",
       "Achieved 2.8 km digital video and 3.2 km telemetry range by optimizing RF configurations and hardware interference-proofing.",
       "Benchmarked edge SoCs with hardware accelerators (NavQPlus i.MX8M Plus, Luckfox, RDK, Milk-V) for embedded AI deployment.",
-      "Evaluated SOT algorithms (CSRT, MedianFlow, GOTURN, SiameseRPN) to optimize tracking accuracy and real-time edge performance.",
       "Reverse-engineered gimbal protocols for AR-based head-tracking control and real-time video stream integration.",
       "Engineered region-of-interest (ROI) tracking systems for real-time person and vehicle monitoring.",
-    ],
-    demos: [
-      { label: "Initiative 1", url: "https://drive.google.com/file/d/1y3iBzFrHN2jnuOz_T_M49-qqr-Pt31Pd/view?usp=sharing" },
-      { label: "Initiative 2", url: "https://drive.google.com/file/d/134vPfFck_n8cHwnoIb-hL4q2z8rp7RBG/view?usp=drive_link" },
-      { label: "Initiative 3", url: "https://drive.google.com/file/d/1uQnlkxFH_BwfYEQtPKDuxrT-yZeYyk7c/view?usp=sharing" },
-      { label: "Initiative 4", url: "https://drive.google.com/file/d/197_6azgGs0dkNADZH9ixbm3KE8Hi_EVS/view?usp=drive_link" },
-      { label: "Initiative 5", url: "https://drive.google.com/file/d/1a09DIxktm6bkwdcQ8us5Dl9Ox6n3Pz9G/view?usp=sharing" },
     ],
   },
   {
@@ -266,7 +258,7 @@ export const achievements = [
   },
   {
     title: "Internship Selection — ZenithraTech",
-    detail: "Selected as one of the top 15–20 students from a pool of 500+ applicants for a year-long industrial internship.",
+    detail: "Eligible among the top 15–20 students from a pool of 500+ applicants for a year-long, credit-bearing industrial internship.",
     meta: "TOP 3%",
     date: "May 2025",
   },
