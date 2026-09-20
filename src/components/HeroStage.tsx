@@ -152,8 +152,6 @@ export default function HeroStage({ sectionRef, reduce }: HeroStageProps) {
     if (flashed.current && !reduce) setFxKey((k) => k + 1);
   }, [stage, reduce]);
 
-  const current = STAGES[stage];
-
   return (
     <div ref={stageRef} className="absolute inset-0 overflow-hidden">
       <svg
@@ -199,18 +197,6 @@ export default function HeroStage({ sectionRef, reduce }: HeroStageProps) {
           />
         </div>
       )}
-
-      {/* HUD — top */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between px-5 pt-4 font-mono text-[10px] tracking-widest sm:px-8 sm:pt-5">
-        <div className="flex flex-col gap-1">
-          <span className="text-violet-soft">SYS://WORLD_SIM</span>
-          <span style={{ color: current.accent }}>{current.label}</span>
-        </div>
-        <span className="flex items-center gap-1.5 text-cyan">
-          <span className="pulse-dot size-1.5 rounded-full bg-cyan" />
-          LIVE
-        </span>
-      </div>
 
       </div>
   );
