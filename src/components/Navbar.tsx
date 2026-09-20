@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const LINKS = [
   { id: "about", label: "About" },
-  { id: "skills", label: "Systems" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
@@ -81,12 +80,6 @@ export default function Navbar() {
               <span className="relative">{label}</span>
             </a>
           ))}
-          <a
-            href="#contact"
-            className="ml-3 rounded-md border border-violet/60 bg-violet/10 px-4 py-2 font-mono text-[12px] tracking-wider text-violet-soft transition-all hover:bg-violet/20 hover:shadow-glow-violet"
-          >
-            HIRE_ME
-          </a>
         </div>
 
         {/* Mobile toggle */}

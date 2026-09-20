@@ -15,9 +15,9 @@ export default function About() {
       <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <Reveal>
           <p className="leading-relaxed text-ink-dim">
-            I'm a final-year&nbsp;
-            <span className="text-ink">Electronics &amp; Communication Engineering</span> student at{" "}
-            {profile.education.short}, building autonomy from the silicon up. My work spans{" "}
+            I'm an{" "}
+            <span className="text-ink">Electronics &amp; Communication Engineering</span> graduate of{" "}
+            {profile.education.short} (class of '26), building autonomy from the silicon up. My work spans{" "}
             <span className="text-ink">
               LiDAR SLAM, ROS 2 navigation, motion planning, embedded drivers and UAV communication
               stacks
@@ -25,9 +25,9 @@ export default function About() {
             — from bare-metal STM32 drivers to multi-kilometre drone links.
           </p>
           <p className="mt-4 leading-relaxed text-ink-dim">
-            As one of the top 15–20 interns selected from 500+ applicants at{" "}
-            <span className="text-ink">ZenithraTech (MapmyIndia)</span>, I shipped defense-grade UAV
-            features end-to-end. Away from the bench, I led the{" "}
+            Now a full-time <span className="text-ink">Robotics Engineer</span> at{" "}
+            <span className="text-ink">ZenithraTech (MapmyIndia)</span>, contributing to the end-to-end
+            development and deployment of defense-grade UAV features. Away from the bench, I led the{" "}
             <span className="text-ink">Electronics and Robotics Society</span> at IIIT Jabalpur —
             running 20+ workshops and mentoring 250+ enthusiasts.
           </p>

@@ -138,14 +138,11 @@ export default function Hero() {
           </div>
 
           {/* floating telemetry chips */}
-          <div className="float-slow absolute -left-6 top-8 hidden rounded-md border border-line-bright bg-base/85 px-3 py-2 font-mono text-[10px] tracking-wider text-ink-dim backdrop-blur sm:block">
-            <span className="text-violet-soft">SLAM</span> · NOISE <span className="text-ink">-30%</span>
-          </div>
           <div
             className="float-slow absolute -right-5 bottom-16 hidden rounded-md border border-line-bright bg-base/85 px-3 py-2 font-mono text-[10px] tracking-wider text-ink-dim backdrop-blur sm:block"
             style={{ animationDelay: "-3s" }}
           >
-            <span className="text-cyan">RANGE</span> · 2.8 km
+            <span className="text-cyan">CALLSIGN</span> · GRADVIZOR
           </div>
         </motion.div>
       </div>

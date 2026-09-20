@@ -13,13 +13,13 @@ export const profile = {
   github: "https://github.com/GradVizor",
   linkedin: "https://linkedin.com/in/reishabh-rathore-278044333",
   education: {
-    institution: "Indian Institute of Information Technology, Design and Manufacturing",
-    short: "IIITDM Jabalpur",
+    institution: "Indian Institute of Information Technology, Design and Manufacturing Jabalpur",
+    short: "IIIT Jabalpur",
     degree: "B.Tech — Electronics & Communication Engineering",
     duration: "Nov 2022 – May 2026",
     location: "Jabalpur, Madhya Pradesh",
   },
-  status: "OPEN TO OPPORTUNITIES",
+  status: "OPEN TO POSSIBILITIES",
   roles: [
     "Robotics & Automation Engineer",
     "ROS 2 Developer",
@@ -28,7 +28,7 @@ export const profile = {
     "Autonomous Systems Builder",
   ],
   stats: [
-    { label: "ROBOTICS INTERN", value: "ZenithraTech × MapmyIndia" },
+    { label: "ROBOTICS ENGINEER", value: "ZenithraTech × MapmyIndia" },
     { label: "COMPETITION RANK", value: "6th / 570+" },
     { label: "VIDEO RANGE", value: "2.8 km" },
     { label: "WORKSHOPS LED", value: "20+" },

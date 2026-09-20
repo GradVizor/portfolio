@@ -8,7 +8,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
-      <SectionHeading index="03" kicker="MISSIONS" title="Mission Log — Projects">
+      <SectionHeading index="02" kicker="MISSIONS" title="Mission Log — Projects">
         Selected builds from the bench: autonomous navigation, manipulation, precision
         instrumentation and embedded engineering. Source, demos and full logs included.
       </SectionHeading>

@@ -17,7 +17,7 @@ export interface Project {
   source?: DemoLink[];
   duration: string;
   status: string;
-  category: "ROBOTICS" | "EMBEDDED" | "COMPETITION" | "LEADERSHIP";
+  category: "ROBOTICS" | "EMBEDDED" | "SIM-TO-REAL" | "COMPETITION" | "LEADERSHIP";
 }
 
 export const projects: Project[] = [
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     summary:
       "A foundational, deep-dive autonomous mobile robot platform built to master industrial ROS 2 architecture, scalability and robust autonomous navigation frameworks — from baseline chassis to NPU-accelerated AI.",
     highlights: [
-      "Implemented Cartographer for LiDAR SLAM — reduced mapping noise by 30% and improved overall clarity.",
+      "Implemented Cartographer for LiDAR SLAM — reduced mapping noise and improved overall clarity.",
       "Integrated AMCL for real-time localization — ±5 cm pose estimation error in indoor environments.",
       "Version-1: baseline chassis with core ROS 2 navigation.",
       "Version-2: vibration-isolated design with micro-ROS control & NPU-accelerated AI.",
@@ -38,14 +38,14 @@ export const projects: Project[] = [
     ],
     images: ["projects/img-001.jpg", "projects/img-002.jpg", "projects/img-004.jpg"],
     cover: "projects/img-001.jpg",
-    tech: ["ROS 2", "Nav2", "Cartographer", "AMCL", "LiDAR", "micro-ROS", "C++", "Python", "IMU Fusion"],
+    tech: ["ROS 2", "Nav2", "Cartographer", "AMCL", "LiDAR", "micro-ROS", "C++", "IMU Fusion", "TurtleBot4"],
     demos: [
       { label: "Demo 1", url: "https://drive.google.com/file/d/1gYuMWMLw9vXRp5zpZledmSm4xbt9TerD/view?usp=sharing" },
       { label: "Demo 2", url: "https://drive.google.com/file/d/1DxO5cXOMWQG8-xjvnlqjdLs6dNjjrbPi/view?usp=drive_link" },
     ],
     source: [
-      { label: "Source Code (Version 1)", url: "https://github.com/GradVizor/amr.git" },
-      { label: "Source Code (Version 2)", url: "https://github.com/GradVizor/glitch-amr.git" },
+      { label: "Source Code (Version 1)", url: "https://github.com/GradVizor/amr" },
+      { label: "Source Code (Version 2)", url: "https://github.com/GradVizor/glitch-amr" },
     ],
     duration: "Apr 2024 — Present",
     status: "ACTIVE",
@@ -57,13 +57,13 @@ export const projects: Project[] = [
     title: "ROS2 6-DoF Robotic Arm",
     subtitle: "Multi-functional Robot Arm for Object Handling",
     summary:
-      "A custom-designed 6-DOF manipulator built to master the software architecture of MoveIt2 and ROS 2 Control — from open-source simulation to custom CAD hardware integration.",
+      "A 6-DOF manipulator built to master the software architecture of MoveIt2 and ROS 2 Control — from open-source simulation to custom CAD hardware integration.",
     highlights: [
-      "Compared IKPy and KDL inverse-kinematics solvers — IKPy achieved 20% faster computation.",
-      "Integrated MoveIt-2 for motion planning — trajectory execution error of only 2% in simulation.",
-      "Deep expertise in forward/inverse kinematics, DH parameters, Jacobian velocity profiles, dexterous workspaces and jerk minimization.",
-      "Smooth trajectory control using modern tangent-space methods with self-designed CAD modeling for the end-effector.",
+      "Compared IKPy and KDL inverse-kinematics solvers — IKPy achieved faster computation.",
+      "Integrated MoveIt-2 for motion planning — minimum trajectory execution error.",
+      "Version-1: open-source CAD, ROS 2 Control and MoveIt-2 simulation.",
       "Version-2: custom CAD, ROS 2 Control & full hardware integration.",
+      "Built practical understanding of forward/inverse kinematics, DH parameters, Jacobians, velocity profiles, dexterous workspaces, and jerk minimization.",
     ],
     images: ["projects/img-008.jpg", "projects/img-005.jpg", "projects/img-006.jpg"],
     cover: "projects/img-008.jpg",
@@ -73,7 +73,10 @@ export const projects: Project[] = [
       { label: "Demo 2", url: "https://drive.google.com/file/d/1LEmb21K0TODazpWKeoZ2fniz44H_-rC6/view?usp=drive_link" },
       { label: "Demo 3", url: "https://drive.google.com/file/d/1X3AurunVpraGliL25VB_lllaB2Sc6P9g/view?usp=drive_link" },
     ],
-    source: [{ label: "Source Code", url: "https://github.com/GradVizor/rhino_six_dof_arm" }],
+    source: [
+      { label: "Source Code (Version 1)", url: "https://github.com/GradVizor/eureka" },
+      { label: "Source Code (Version 2)", url: "https://github.com/GradVizor/rhino_six_dof_arm" },
+    ],
     duration: "Oct 2024 — Dec 2024",
     status: "COMPLETE",
     category: "ROBOTICS",
@@ -106,21 +109,21 @@ export const projects: Project[] = [
     id: "mira",
     index: "04",
     title: "MIRA — RL Robotic Arm",
-    subtitle: "Robotic Arm Testbed for Reinforcement Learning",
+    subtitle: "MIRA: Multimodal Intelligent Robotic Arm · Sim-to-Real Transfer",
     summary:
-      "A dedicated robotic arm platform designed as a testbed for reinforcement learning and machine learning — closing the gap between simulation-trained policies and real-hardware manipulation. The hardware and mechanical design are based on the open-source SO-ARM 100/101 arm — a community-standard, 3D-printed manipulator widely adopted in robot-learning research.",
+      "Robotic arm testbed for reinforcement learning, bridging simulation-trained policies with real-world manipulation. Based on the open-source SO-ARM 100/101 platform.",
     highlights: [
-      "Hardware and mechanical build based on the SO-ARM 100/101 — an open-source 3D-printed arm design widely used across the robot-learning community.",
-      "Wireless-commanded platform enabling model-in-the-loop training and evaluation.",
+      "Based on the SO-ARM 100/101 — an open-source 3D-printed arm design widely used across the robot-learning community.",
+      "Platform enabling model-in-the-loop training and evaluation.",
       "Scaffolding for sim-to-real transfer of learned control policies.",
     ],
     images: ["projects/img-0122.jpg", "projects/img-0121.jpg"],
     cover: "projects/img-0122.jpg",
-    tech: ["Python", "Reinforcement Learning", "ROS 2", "PyTorch", "Gymnasium", "MoveIt 2"],
+    tech: ["Python", "Reinforcement Learning", "MuJoCo", "PyTorch", "Gymnasium"],
     source: [{ label: "Source Code", url: "https://github.com/GradVizor/mira-arm" }],
     duration: "Ongoing",
     status: "IN PROGRESS",
-    category: "ROBOTICS",
+    category: "SIM-TO-REAL",
   },
   {
     id: "assistive-bot",
@@ -130,16 +133,16 @@ export const projects: Project[] = [
     summary:
       "A cost-effective autonomous hospital round assistant with hands-free interaction, real-time EHR integration and a hygiene-focused diagnostic tool payload.",
     highlights: [
-      "Engineered an ESP32-based RSSI triangulation system for seamless doctor-following capability.",
+      "Engineered an Wifi-RSSI based triangulation system for seamless doctor-following capability.",
       "Integrated ultrasonic sensors with a master microcontroller for real-time obstacle avoidance.",
       "Hands-free interaction model designed for hygiene-critical clinical environments.",
     ],
     images: ["projects/img-015.jpg", "projects/img-013.jpg", "projects/img-014.jpg", "projects/img-016.jpg", "projects/img-017.jpg"],
     cover: "projects/img-015.jpg",
-    tech: ["ESP32", "RSSI Triangulation", "Ultrasonic", "Embedded C", "EHR Integration"],
+    tech: ["ESP32", "RSSI Triangulation", "Ultrasonic", "Embedded C", "EHR Integration", "Speech-to-Text"],
     demos: [{ label: "Demo", url: "https://drive.google.com/file/d/1kRaoBHwdX3ATXH3AQuDs8nywXvZMuONG/view?usp=drive_link" }],
-    duration: "Ongoing",
-    status: "IN PROGRESS",
+    duration: "Oct 2024 — Apr 2025",
+    status: "COMPLETE",
     category: "ROBOTICS",
   },
   {
@@ -150,8 +153,8 @@ export const projects: Project[] = [
     summary:
       "A modular, register-level driver architecture for the STM32F446RE — built from scratch with no HAL, engineered for maintainability and performance.",
     highlights: [
-      "Developed a modular driver architecture — improved maintainability and reduced future development time by 30%.",
-      "Implemented DMA for I2C, SPI and UART — reducing CPU load and increasing throughput by 40%.",
+      "Developed a modular driver architecture — improved maintainability and reduced future development time by ~30%.",
+      "Implemented DMA for I2C, SPI and UART — reducing CPU load and increasing throughput by ~40%.",
       "Register-level bare-metal implementation: UART, I2C, SPI, GPIO, EXTI, timers and DMA engine.",
     ],
     images: [],
@@ -166,7 +169,7 @@ export const projects: Project[] = [
     id: "robocon",
     index: "07",
     title: "DD Robocon — Team Leader",
-    subtitle: "National Robotics Championship · ABU Robocon India",
+    subtitle: "National Robotics Championship · DD Robocon India",
     summary:
       "Led a 30-member engineering team for DD Robocon — the official Indian national selection stage for ABU Robocon, Asia's premier collegiate robotics championship.",
     highlights: [
@@ -199,19 +202,33 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
+    id: "zenithra-fte",
+    title: "Robotics Engineer",
+    org: "ZenithraTech (MapmyIndia)",
+    location: "New Delhi",
+    duration: "Jul 2026 — Present",
+    type: "INDUSTRY",
+    summary:
+      "Converted from internship to full-time — owning end-to-end development and deployment of defense-grade UAV features across software and hardware stacks.",
+    items: [
+      "Evaluating software-defined radios (SDRs) for integrating our custom UAV stack — targeting agile, long-range, error-resilient wireless links.",
+      "Delivered a dual-feed video system streaming live footage from two drones to a single ground unit.",
+      "Contributed flight controller support to ArduPilot — our FC now listed among its supported boards.",
+    ],
+  },
+  {
     id: "zenithra",
     title: "Robotics Intern",
     org: "ZenithraTech (MapmyIndia)",
     location: "New Delhi",
-    duration: "May 2025 — Jul 2026",
+    duration: "May 2025 — Jun 2026",
     type: "INDUSTRY",
     summary:
-      "Selected as one of the top 15–20 students from a pool of 500+ applicants for a year-long, credit-bearing industrial internship. Transitioned from foundational aerial robotics to deploying advanced autonomy for defense applications — owning hardware integration, data-flow optimization and embedded AI across UAV software/hardware stacks.",
+      "Transitioned from foundational aerial robotics to deploying advanced autonomy for defense applications — owning hardware integration, data-flow optimization and embedded AI across UAV software/hardware stacks.",
     items: [
       "Designed a proprietary, low-latency UAV video streaming stack utilizing WFB-ng protocols, optimized for high-reliability 2.4/5.8 GHz operation.",
       "Achieved 2.8 km digital video and 3.2 km telemetry range by optimizing RF configurations and hardware interference-proofing.",
       "Benchmarked edge SoCs with hardware accelerators (NavQPlus i.MX8M Plus, Luckfox, RDK, Milk-V) for embedded AI deployment.",
-      "Reverse-engineered gimbal protocols for AR-based head-tracking control and real-time video stream integration.",
       "Engineered region-of-interest (ROI) tracking systems for real-time person and vehicle monitoring.",
     ],
   },
@@ -256,66 +273,13 @@ export const achievements = [
     meta: "SCORE 86/100",
     date: "Jan 2025",
   },
-  {
-    title: "Internship Selection — ZenithraTech",
-    detail: "Eligible among the top 15–20 students from a pool of 500+ applicants for a year-long, credit-bearing industrial internship.",
-    meta: "TOP 3%",
-    date: "May 2025",
-  },
-];
-
-export const skillGroups = [
-  {
-    title: "Languages",
-    mono: "LANG",
-    skills: [
-      { name: "C", level: 92 },
-      { name: "C++", level: 88 },
-      { name: "Python", level: 85 },
-    ],
-  },
-  {
-    title: "Systems & Tooling",
-    mono: "SYS",
-    skills: [
-      { name: "Linux (Ubuntu)", level: 90 },
-      { name: "ROS 2 (Humble) / Micro-ROS", level: 88 },
-      { name: "Docker · Git · CMake · Make", level: 84 },
-    ],
-  },
-  {
-    title: "Hardware Platforms",
-    mono: "HW",
-    skills: [
-      { name: "STM32 · ESP32 · Teensy · Arduino", level: 90 },
-      { name: "Raspberry Pi · MilkV · RDK · Luckfox · NXP", level: 86 },
-      { name: "Kernel config & device drivers", level: 72 },
-    ],
-  },
-  {
-    title: "Robotics / UAV Stack",
-    mono: "UAV",
-    skills: [
-      { name: "PX4 · MAVLink · MAVSDK", level: 80 },
-      { name: "OpenHD / WFB-ng streaming", level: 78 },
-      { name: "Nav2 · Cartographer · SLAM", level: 86 },
-    ],
-  },
-  {
-    title: "Design & CAD",
-    mono: "CAD",
-    skills: [
-      { name: "Fusion 360", level: 84 },
-      { name: "KiCAD", level: 70 },
-    ],
-  },
 ];
 
 export const aboutFacts = [
   {
     k: "DEGREE",
     v: "B.Tech · ECE",
-    d: "IIITDM Jabalpur, graduating May 2026",
+    d: "IIITDM Jabalpur, graduated May 2026",
   },
   {
     k: "FOCUS",
@@ -323,13 +287,13 @@ export const aboutFacts = [
     d: "SLAM, perception, ROS 2, embedded AI at the edge",
   },
   {
-    k: "STACK",
-    v: "ROS 2 + UAV",
-    d: "OpenHD/WFB-ng, PX4, MAVSDK, gimbal control",
+    k: "ROLE",
+    v: "Robotics Engineer",
+    d: "Full-time at ZenithraTech (MapmyIndia), New Delhi",
   },
   {
     k: "COMMUNITY",
-    v: "250+ mentored",
-    d: "20+ workshops as ERS society coordinator",
+    v: "ERS · IIIT Jabalpur",
+    d: "Electronics and Robotics Society — 250+ mentees",
   },
 ];

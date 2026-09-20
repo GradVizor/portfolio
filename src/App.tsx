@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
 import Starfield from "./components/Starfield";
 
 export default function App() {
@@ -29,7 +28,6 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Skills />
         <Projects />
         <Experience />
         <Contact />

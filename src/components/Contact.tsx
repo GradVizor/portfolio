@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 export default function Contact() {
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
-      <SectionHeading index="05" kicker="UPLINK" title="Establish Contact">
+      <SectionHeading index="04" kicker="UPLINK" title="Establish Contact">
         Open to robotics, embedded systems and autonomy roles — plus collaborations on
         serious engineering problems.
       </SectionHeading>
