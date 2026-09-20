@@ -227,6 +227,64 @@ body {
   animation: float-slow 7s ease-in-out infinite;
 }
 
+/* ---------- 3D perspective floor grid (flight-deck horizon) ---------- */
+.perspective-grid {
+  position: absolute;
+  inset: -12px -25% 0;
+  background-image:
+    linear-gradient(to right, rgba(139, 92, 246, 0.32) 2px, transparent 2px),
+    linear-gradient(to top, rgba(139, 92, 246, 0.28) 2px, transparent 2px);
+  background-size: 56px 30px;
+  background-position: center bottom;
+  transform: perspective(780px) rotateX(63deg);
+  transform-origin: bottom center;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 12%,
+    rgba(0, 0, 0, 0.6) 52%,
+    transparent 96%
+  );
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 12%,
+    rgba(0, 0, 0, 0.6) 52%,
+    transparent 96%
+  );
+  animation: grid-pan 3.4s linear infinite;
+  opacity: 0.95;
+  will-change: background-position;
+}
+/* fine minor lines for scale depth */
+.perspective-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(34, 211, 238, 0.08) 1px, transparent 1px),
+    linear-gradient(to top, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 14px 7.5px;
+  background-position: center bottom;
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, black 88%);
+  mask-image: linear-gradient(to top, transparent 30%, black 88%);
+  animation: grid-pan-fine 3.4s linear infinite;
+}
+@keyframes grid-pan {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 30px;
+  }
+}
+@keyframes grid-pan-fine {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 30px;
+  }
+}
+
 /* ---------- Verified grid backdrop ---------- */
 .bg-grid {
   background-image:
@@ -242,6 +300,8 @@ body {
   .pulse-dot,
   .ticker-track,
   .float-slow,
+  .perspective-grid,
+  .perspective-grid::before,
   .glitch::before,
   .glitch::after {
     animation: none !important;

@@ -16,20 +16,12 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-24 pb-10">
-      {/* perspective floor grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[46vh]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(139,92,246,0.14) 1px, transparent 1px), linear-gradient(to top, rgba(34,211,238,0.08) 1px, transparent 1px)",
-          backgroundSize: "56px 28px",
-          transform: "perspective(700px) rotateX(62deg)",
-          transformOrigin: "bottom",
-          maskImage: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)",
-          WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)",
-        }}
-      />
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[48vh] overflow-hidden"
+      >
+        <div className="perspective-grid" />
+      </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
         {/* -- Left: copy -- */}
