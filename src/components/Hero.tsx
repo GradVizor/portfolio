@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} id="top" className="relative h-[340vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
         {/* full-bleed 3D stage */}
         <HeroStage sectionRef={sectionRef} reduce={reduce} />
 
@@ -29,11 +29,11 @@ export default function Hero() {
         />
 
         {/* -- Copy overlay -- */}
-        <div className="relative z-10 flex h-full w-full -translate-y-8 items-center pl-10 pr-5 pt-16 sm:pl-16 sm:pr-8">
-          <div className="w-full max-w-2xl pb-32">
+        <div className="relative z-10 flex min-h-0 flex-1 items-center pl-10 pr-5 pt-16 sm:pl-16 sm:pr-8 sm:pt-20">
+          <div className="w-full max-w-2xl">
             <motion.div
               {...fadeUp(0.05)}
-              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-line-bright bg-surface-2/80 px-5 py-2"
+              className="mb-4 sm:mb-7 inline-flex items-center gap-2.5 rounded-full border border-line-bright bg-surface-2/80 px-5 py-2"
             >
               <span className="pulse-dot size-2 rounded-full bg-success" />
               <span className="font-mono text-xs tracking-[0.22em] text-ink-dim">
@@ -43,7 +43,7 @@ export default function Hero() {
 
             <motion.h1
               {...fadeUp(0.15)}
-              className="glitch whitespace-nowrap font-display text-[clamp(2rem,10vw,4.25rem)] font-bold leading-[0.95] tracking-tight"
+              className="glitch font-display text-[clamp(1.9rem,9vw,4.25rem)] font-bold leading-[0.95] tracking-tight"
               data-text={profile.name}
             >
               <span>
@@ -54,17 +54,17 @@ export default function Hero() {
               </span>
             </motion.h1>
 
-            <motion.div {...fadeUp(0.25)} className="mt-6 flex items-center gap-2 font-mono text-base text-cyan sm:text-lg">
-              <span className="text-ink-faint">&gt;</span>
+            <motion.div {...fadeUp(0.25)} className="mt-4 sm:mt-6 flex items-center gap-2 font-mono text-base text-cyan sm:text-lg">
+              <span className="text-ink-faint">{' > '}</span>
               <span className="min-h-7">{typed}</span>
               <span className="caret -ml-1 text-violet-soft">▍</span>
             </motion.div>
 
-            <motion.p {...fadeUp(0.32)} className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-dim sm:text-xl">
+            <motion.p {...fadeUp(0.32)} className="mt-4 sm:mt-6 max-w-2xl text-lg leading-relaxed text-ink-dim sm:text-xl">
               {profile.tagline}
             </motion.p>
 
-            <motion.div {...fadeUp(0.4)} className="mt-9 flex flex-wrap items-center gap-4">
+            <motion.div {...fadeUp(0.4)} className="mt-6 sm:mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-violet px-6 py-3.5 text-base font-semibold text-white transition-all hover:shadow-glow-violet"
@@ -83,7 +83,7 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            <motion.div {...fadeUp(0.48)} className="mt-10 flex items-center gap-5 text-ink-dim">
+            <motion.div {...fadeUp(0.48)} className="mt-6 sm:mt-10 flex items-center gap-5 text-ink-dim">
               {[
                 { icon: Github, href: profile.github, label: "GitHub" },
                 { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
@@ -108,12 +108,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* -- Tech ticker — pinned to sticky-bottom -- */}
+        {/* -- Tech ticker — now in normal flow at bottom of sticky area -- */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 1 }}
-          className="absolute inset-x-0 bottom-24 z-10 overflow-hidden border-y border-line/70 bg-base/60 backdrop-blur-sm"
+          className="relative z-10 shrink-0 hidden overflow-hidden border-y border-line/70 bg-base/60 backdrop-blur-sm portrait:flex [@media(max-height:500px)]:hidden"
         >
           <div className="flex items-center">
             <div className="flex items-center gap-2 whitespace-nowrap border-r border-line px-4 py-3 font-mono text-xs font-semibold tracking-widest text-violet-soft">
