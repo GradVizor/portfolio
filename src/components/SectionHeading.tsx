@@ -20,7 +20,7 @@ export default function SectionHeading({ index, title, kicker, children }: Secti
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           {title}
         </h2>
-        {children && <p className="mt-3 max-w-2xl leading-relaxed text-ink-dim">{children}</p>}
+        {children && <p className="mt-4 max-w-none text-lg leading-relaxed text-ink-dim sm:text-xl">{children}</p>}
       </div>
     </Reveal>
   );

@@ -9,9 +9,29 @@ interface ProjectCardProps {
   project: Project;
   flip?: boolean;
   compact?: boolean;
+  oversize?: boolean;
 }
 
-export default function ProjectCard({ project, flip = false, compact = false }: ProjectCardProps) {
+export default function ProjectCard({ project, flip = false, compact = false, oversize = true }: ProjectCardProps) {
+  const sz = oversize
+    ? {
+        meta: "text-[11px]",
+        title: "text-2xl sm:text-3xl",
+        sub: "text-[12px]",
+        body: "text-[15px]",
+        list: "text-[14px]",
+        action: "text-[13px]",
+        chip: "text-[11px]",
+      }
+    : {
+        meta: "text-[10px]",
+        title: "text-xl sm:text-2xl",
+        sub: "text-[11px]",
+        body: "text-[14px]",
+        list: "text-[13px]",
+        action: "text-[12px]",
+        chip: "text-[10px]",
+      };
   const ref = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
   const [tilt, setTilt] = useState({ rx: 0, ry: 0, glow: { x: 50, y: 50, visible: false } });
@@ -52,7 +72,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
           transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
           transition: "transform 0.15s ease-out",
         }}
-        className="hud-corner group relative flex flex-col overflow-hidden rounded-2xl border border-line-bright bg-surface/80 backdrop-blur-sm lg:grid lg:grid-cols-[1fr_1.05fr]"
+        className="hud-corner group relative flex flex-col overflow-hidden rounded-2xl border border-line-bright bg-surface/80 backdrop-blur-sm lg:grid lg:grid-cols-[530px_1fr]"
       >
         {/* glow following cursor */}
         <div
@@ -130,7 +150,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
 
         {/* -- Body side -- */}
         <div className="relative z-[1] flex flex-col p-6 sm:p-7">
-          <div className="mb-3 flex items-center gap-3 font-mono text-[10px] tracking-widest text-ink-faint">
+          <div className="mb-3 flex items-center gap-3 font-mono tracking-widest text-ink-faint">
             <span className="flex items-center gap-1.5">
               <span
                 className={`size-1.5 rounded-full ${
@@ -143,16 +163,16 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
             <span>{project.duration}</span>
           </div>
 
-          <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-violet-soft sm:text-2xl">
+          <h3 className={`font-display font-bold text-ink transition-colors group-hover:text-violet-soft ${sz.title}`}>
             {project.title}
           </h3>
-          <p className="mt-0.5 font-mono text-[11px] tracking-wider text-ink-faint">{project.subtitle}</p>
+          <p className={`mt-0.5 font-mono tracking-wider text-ink-faint ${sz.sub}`}>{project.subtitle}</p>
 
-          <p className="mt-4 text-[14px] leading-relaxed text-ink-dim">{project.summary}</p>
+          <p className={`mt-4 leading-relaxed text-ink-dim ${sz.body}`}>{project.summary}</p>
 
           <ul className="mt-4 space-y-2">
             {visibleHighlights.map((h) => (
-              <li key={h} className="flex gap-2.5 text-[13px] leading-relaxed text-ink-dim">
+              <li key={h} className={`flex gap-2.5 leading-relaxed text-ink-dim ${sz.list}`}>
                 <span className="mt-1.5 text-violet-soft">▸</span>
                 {h}
               </li>
@@ -162,7 +182,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
           {hasMore && (
             <button
               onClick={() => setExpanded((v) => !v)}
-              className="mt-3 self-start font-mono text-[11px] tracking-wider text-cyan hover:text-ink transition-colors"
+              className={`mt-3 self-start font-mono tracking-wider text-cyan hover:text-ink transition-colors ${sz.sub}`}
             >
               {expanded ? "▲ COLLAPSE LOG" : "▼ EXPAND LOG"}
             </button>
@@ -173,7 +193,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="rounded border border-line-bright bg-surface-3/70 px-2 py-0.5 font-mono text-[10px] tracking-wide text-ink-dim"
+                className={`rounded border border-line-bright bg-surface-3/70 px-2 py-0.5 font-mono tracking-wide text-ink-dim ${sz.chip}`}
               >
                 {t}
               </span>
@@ -188,7 +208,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
                 href={s.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-line-bright bg-surface-2 px-4 py-2 text-[12px] font-medium text-ink transition-all hover:border-violet/60 hover:text-violet-soft hover:shadow-glow-violet"
+                className={`inline-flex items-center gap-2 rounded-md border border-line-bright bg-surface-2 px-4 py-2 font-medium text-ink transition-all hover:border-violet/60 hover:text-violet-soft hover:shadow-glow-violet ${sz.action}`}
               >
                 <Github size={14} /> {s.label}
               </a>
@@ -199,7 +219,7 @@ export default function ProjectCard({ project, flip = false, compact = false }: 
                 href={d.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-violet/10 px-4 py-2 text-[12px] font-medium text-violet-soft transition-all hover:bg-violet/25 hover:shadow-glow-violet"
+                className={`inline-flex items-center gap-2 rounded-md bg-violet/10 px-4 py-2 font-medium text-violet-soft transition-all hover:bg-violet/25 hover:shadow-glow-violet ${sz.action}`}
               >
                 <Play size={13} /> {d.label}
               </a>

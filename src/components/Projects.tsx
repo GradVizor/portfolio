@@ -7,7 +7,7 @@ export default function Projects() {
   const featured = projects.filter((p) => p.category !== "COMPETITION" && p.id !== "bare-metal");
 
   return (
-    <section id="projects" className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <section id="projects" className="relative mx-auto max-w-[1360px] px-5 py-24 sm:px-8">
       <SectionHeading index="02" kicker="MISSIONS" title="Mission Log — Projects">
         Selected builds from the bench: autonomous navigation, manipulation, precision
         instrumentation and embedded engineering. Source, demos and full logs included.

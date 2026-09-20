@@ -13,7 +13,7 @@ export default function Experience() {
   return (
     <section id="experience" className="relative border-y border-line/60 bg-base-2/40">
       <div className="bg-grid absolute inset-0 opacity-40" aria-hidden />
-      <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
+      <div className="relative mx-auto max-w-[1360px] px-5 py-24 sm:px-8">
         <SectionHeading index="03" kicker="TRACK RECORD" title="Deployment History">
           Industry experience leading autonomy work, and the competition record that came with it.
         </SectionHeading>
@@ -33,27 +33,27 @@ export default function Experience() {
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <div className="flex items-center gap-2.5">
-                        <span className="rounded border border-cyan/40 bg-cyan/10 px-2 py-0.5 font-mono text-[9px] tracking-widest text-cyan">
+                        <span className="rounded border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[10px] tracking-widest text-cyan">
                           {exp.type}
                         </span>
                       </div>
-                      <h3 className="mt-2.5 font-display text-lg font-bold text-ink sm:text-xl">
+                      <h3 className="mt-2.5 font-display text-xl font-bold text-ink sm:text-2xl">
                         {exp.title}
                       </h3>
-                      <p className="text-[13px] text-violet-soft">
+                      <p className="text-sm text-violet-soft sm:text-[15px]">
                         {exp.org} · {exp.location}
                       </p>
                     </div>
-                    <span className="rounded-md border border-line-bright bg-surface-2 px-3 py-1.5 font-mono text-[10px] tracking-widest text-ink-dim">
+                    <span className="rounded-md border border-line-bright bg-surface-2 px-3 py-1.5 font-mono text-[11px] tracking-widest text-ink-dim">
                       {exp.duration}
                     </span>
                   </div>
 
-                  <p className="mt-4 text-[14px] leading-relaxed text-ink-dim">{exp.summary}</p>
+                  <p className="mt-4 text-[15px] leading-relaxed text-ink-dim">{exp.summary}</p>
 
                   <ul className="mt-4 space-y-2">
                     {exp.items.map((item) => (
-                      <li key={item} className="flex gap-2.5 text-[13px] leading-relaxed text-ink-dim">
+                      <li key={item} className="flex gap-2.5 text-[14px] leading-relaxed text-ink-dim">
                         <span className="mt-1.5 text-cyan">▸</span>
                         {item}
                       </li>
@@ -68,9 +68,9 @@ export default function Experience() {
                           href={d.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-md border border-line-bright bg-surface-2 px-3 py-1.5 font-mono text-[11px] tracking-wide text-ink-dim transition-colors hover:border-cyan/60 hover:text-cyan"
+                          className="inline-flex items-center gap-1.5 rounded-md border border-line-bright bg-surface-2 px-3 py-1.5 font-mono text-[12px] tracking-wide text-ink-dim transition-colors hover:border-cyan/60 hover:text-cyan"
                         >
-                          <ExternalLink size={12} /> {d.label}
+                          <ExternalLink size={13} /> {d.label}
                         </a>
                       ))}
                     </div>
@@ -79,7 +79,7 @@ export default function Experience() {
                   {exp.images && exp.images.length > 0 && (
                     <div className="mt-5 border-t border-line/70 pt-4">
                       <div className="flex items-center gap-2">
-                        <span className="pr-0.5 font-mono text-[9px] tracking-widest text-ink-faint">
+                        <span className="pr-0.5 font-mono text-[10px] tracking-widest text-ink-faint">
                           GALLERY
                         </span>
                         {exp.images.map((img, i) => (
@@ -97,7 +97,7 @@ export default function Experience() {
                           </button>
                         ))}
                       </div>
-                      <p className="mt-2 font-mono text-[9px] tracking-widest text-ink-faint">
+                      <p className="mt-2 font-mono text-[10px] tracking-widest text-ink-faint">
                         {String(exp.images.length).padStart(2, "0")} IMAGES // CLICK TO ENLARGE
                       </p>
                     </div>
@@ -122,13 +122,13 @@ export default function Experience() {
               <Reveal key={a.title} delay={i * 0.08}>
                 <div className="group relative overflow-hidden rounded-xl border border-line-bright bg-surface/80 p-5 transition-all hover:-translate-y-1 hover:border-violet/50 hover:shadow-glow-violet">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[9px] tracking-widest text-ink-faint">{a.date}</span>
-                    <span className="rounded border border-violet/40 bg-violet/10 px-2 py-0.5 font-mono text-[9px] tracking-widest text-violet-soft">
+                    <span className="font-mono text-[10px] tracking-widest text-ink-faint">{a.date}</span>
+                    <span className="rounded border border-violet/40 bg-violet/10 px-2 py-0.5 font-mono text-[10px] tracking-widest text-violet-soft">
                       {a.meta}
                     </span>
                   </div>
-                  <h4 className="mt-3 text-sm font-semibold text-ink">{a.title}</h4>
-                  <p className="mt-2 text-[12.5px] leading-relaxed text-ink-dim">{a.detail}</p>
+                  <h4 className="mt-3 text-base font-semibold text-ink">{a.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-dim">{a.detail}</p>
                   <span className="absolute -right-6 -top-6 size-16 rounded-full bg-violet/10 blur-2xl transition-opacity opacity-60 group-hover:opacity-100" />
                 </div>
               </Reveal>
