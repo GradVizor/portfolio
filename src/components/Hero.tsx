@@ -113,7 +113,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 1 }}
-          className="relative z-10 shrink-0 hidden overflow-hidden border-y border-line/70 bg-base/60 backdrop-blur-sm portrait:flex [@media(max-height:500px)]:hidden"
+          className="relative z-10 shrink-0 flex overflow-hidden border-y border-line/70 bg-base/60 backdrop-blur-sm [@media(max-height:500px)]:hidden"
         >
           <div className="flex items-center">
             <div className="flex items-center gap-2 whitespace-nowrap border-r border-line px-4 py-3 font-mono text-xs font-semibold tracking-widest text-violet-soft">
