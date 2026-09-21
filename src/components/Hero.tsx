@@ -3,13 +3,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { heroTicker, profile } from "../data/profile";
 import { useTypewriter } from "../hooks/useTypewriter";
-import HeroStage from "./HeroStage";
-
-/* The 3D stage is fully removed when previewing locally — it only renders on
-   the deployed site (non-localhost hosts). */
-const IS_LOCALHOST =
-  typeof window !== "undefined" &&
-  /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 
 export default function Hero() {
   const typed = useTypewriter({ texts: profile.roles });
@@ -25,10 +18,6 @@ export default function Hero() {
   return (
     <section ref={sectionRef} id="top" className="relative h-[340vh]">
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {!IS_LOCALHOST && (
-          <HeroStage sectionRef={sectionRef} reduce={reduce} />
-        )}
-
         {/* readability scrim */}
         <div
           aria-hidden
