@@ -14,7 +14,7 @@ export default function Experience() {
     <section id="experience" className="relative border-y border-line/60 bg-base-2/40">
       <div className="bg-grid absolute inset-0 opacity-40" aria-hidden />
       <div className="relative mx-auto max-w-[1360px] px-5 py-24 sm:px-8">
-        <SectionHeading index="03" kicker="TRACK RECORD" title="Deployment History">
+        <SectionHeading index="04" kicker="TRACK RECORD" title="Deployment History">
           Industry experience leading autonomy work, and the competition record that came with it.
         </SectionHeading>
 
