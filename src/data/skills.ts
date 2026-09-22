@@ -28,21 +28,21 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "aerial",
     category: "AERIAL SYSTEMS",
-    skills: ["PX4", "MAVLink", "ArduPilot", "WFB-ng", "SDR", "FPV Video Link"],
+    skills: ["PX4", "MAVLink", "ArduPilot", "WFB-ng", "SDR"],
   },
   {
     id: "sim2real",
     category: "SIM-TO-REAL",
-    skills: ["MuJoCo", "Isaac Sim", "Gazebo", "Gymnasium"],
+    skills: ["MuJoCo", "Gazebo", "Gymnasium", "Rviz2"],
   },
   {
-    id: "mechanical",
-    category: "MECHANICAL",
-    skills: ["Fusion 360", "SolidWorks", "Mechanical Design", "Prototyping", "3D Printing"],
+    id: "agentic",
+    category: "AI AGENTS & TOOLING",
+    skills: ["LLM Agents", "Tool Calling", "MCP", "Prompt Engineering"],
   },
   {
     id: "leadership",
     category: "LEADERSHIP & TOOLS",
-    skills: ["Git", "Linux", "Team Leadership", "Mentoring", "Workshops"],
+    skills: ["Git", "Linux", "Docker"],
   },
 ];

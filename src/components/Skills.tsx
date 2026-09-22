@@ -1,4 +1,5 @@
 import {
+  Bot,
   Boxes,
   BrainCircuit,
   CircuitBoard,
@@ -6,7 +7,6 @@ import {
   RadioTower,
   Route,
   Users,
-  Wrench,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { skillGroups } from "../data/skills";
@@ -20,7 +20,7 @@ const groupIcons: Record<string, LucideIcon> = {
   embedded: CircuitBoard,
   aerial: RadioTower,
   sim2real: Boxes,
-  mechanical: Wrench,
+  agentic: Bot,
   leadership: Users,
 };
 
