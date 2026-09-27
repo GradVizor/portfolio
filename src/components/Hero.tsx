@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { heroTicker, profile } from "../data/profile";
@@ -7,7 +6,6 @@ import { useTypewriter } from "../hooks/useTypewriter";
 export default function Hero() {
   const typed = useTypewriter({ texts: profile.roles });
   const reduce = !!useReducedMotion();
-  const sectionRef = useRef<HTMLElement | null>(null);
 
   const fadeUp = (delay: number) => ({
     initial: { opacity: 0, y: reduce ? 0 : 24 },
@@ -16,8 +14,8 @@ export default function Hero() {
   });
 
   return (
-    <section ref={sectionRef} id="top" className="relative h-[340vh]">
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+    <section id="top" className="relative flex min-h-screen flex-col">
+      <div className="flex min-h-0 flex-1 flex-col">
         {/* readability scrim */}
         <div
           aria-hidden

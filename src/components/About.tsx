@@ -14,7 +14,7 @@ export default function About() {
 
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
-          <p className="text-lg leading-relaxed text-ink-dim sm:text-xl">
+          <p className="text-base leading-relaxed text-ink-dim sm:text-lg">
             I'm an{" "}
             <span className="text-ink">Electronics &amp; Communication Engineering</span> graduate of{" "}
             {profile.education.short} (class of '26), building autonomy from the silicon up. My work spans{" "}
@@ -24,7 +24,7 @@ export default function About() {
             </span>{" "}
             — from bare-metal STM32 drivers to multi-kilometre drone links.
           </p>
-          <p className="mt-5 text-lg leading-relaxed text-ink-dim sm:text-xl">
+          <p className="mt-5 text-base leading-relaxed text-ink-dim sm:text-lg">
             Now a full-time <span className="text-ink">Robotics Engineer</span> at{" "}
             <span className="text-ink">ZenithraTech (MapmyIndia)</span>, contributing to the end-to-end
             development and deployment of defense-grade UAV features. Away from the bench, I led the{" "}
