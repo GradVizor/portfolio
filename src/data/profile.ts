@@ -12,6 +12,7 @@ export const profile = {
   emailHref: "mailto:reishabhrathore2003@gmail.com",
   github: "https://github.com/GradVizor",
   linkedin: "https://linkedin.com/in/reishabh-rathore-278044333",
+  resumeUrl: "https://drive.google.com/file/d/1ZFtkIMjF9PVtDzFlV7dCFXnR5oPSkfkK/view?usp=sharing",
   education: {
     institution: "Indian Institute of Information Technology, Design and Manufacturing Jabalpur",
     short: "IIIT Jabalpur",
