@@ -57,7 +57,7 @@ All text and links live in one place — no component edits required:
 ### Links to update
 
 - GitHub / LinkedIn / email / phone → `src/data/profile.ts`.
-- Résumé (local-only, shown via `isLocalHost()`) → `src/data/profile.ts` → `resumeUrl`.
+- Résumé PDF link → `src/data/profile.ts` → `resumeUrl` (must be shared as "Anyone with the link").
 - Per-project Source + Demo links → `src/data/projects.ts` (`source` / `demos` arrays).
 - Demo labels are placeholders (`Demo 1`, `Demo 2`, …) — rename to descriptive titles if preferred.
 
