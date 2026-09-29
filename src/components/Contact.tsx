@@ -1,13 +1,10 @@
 import { FileText, Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { profile } from "../data/profile";
 import { asset } from "../lib/asset";
-import { isLocalHost } from "../lib/env";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 export default function Contact() {
-  const showResume = isLocalHost();
-
   return (
     <section id="contact" className="relative mx-auto max-w-[1360px] px-5 py-24 sm:px-8">
       <SectionHeading index="05" kicker="UPLINK" title="Establish Contact">
@@ -98,24 +95,22 @@ export default function Contact() {
                 </span>
               </a>
 
-              {showResume && (
-                <a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-center gap-4 rounded-lg border border-line bg-surface-2/60 p-4 transition-all hover:border-violet/50 hover:shadow-glow-violet"
-                >
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md border border-violet/40 bg-violet/10 text-violet-soft">
-                    <FileText size={19} />
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-4 rounded-lg border border-line bg-surface-2/60 p-4 transition-all hover:border-violet/50 hover:shadow-glow-violet"
+              >
+                <span className="grid size-11 shrink-0 place-items-center rounded-md border border-violet/40 bg-violet/10 text-violet-soft">
+                  <FileText size={19} />
+                </span>
+                <span className="min-w-0 break-words">
+                  <span className="block font-mono text-[10px] tracking-widest text-ink-faint">RESUME</span>
+                  <span className="text-[15px] text-ink group-hover:text-violet-soft transition-colors">
+                    Curriculum Vitae — PDF
                   </span>
-                  <span className="min-w-0 break-words">
-                    <span className="block font-mono text-[10px] tracking-widest text-ink-faint">RESUME</span>
-                    <span className="text-[15px] text-ink group-hover:text-violet-soft transition-colors">
-                      Curriculum Vitae — PDF
-                    </span>
-                  </span>
-                </a>
-              )}
+                </span>
+              </a>
             </div>
 
             <div className="mt-6 border-t border-line/70 pt-6">

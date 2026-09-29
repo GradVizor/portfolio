@@ -2,12 +2,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, FileText, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { heroTicker, profile } from "../data/profile";
 import { useTypewriter } from "../hooks/useTypewriter";
-import { isLocalHost } from "../lib/env";
 
 export default function Hero() {
   const typed = useTypewriter({ texts: profile.roles });
   const reduce = !!useReducedMotion();
-  const showResume = isLocalHost();
 
   const fadeUp = (delay: number) => ({
     initial: { opacity: 0, y: reduce ? 0 : 24 },
@@ -77,17 +75,15 @@ export default function Hero() {
               >
                 Get in touch
               </a>
-              {showResume && (
-                <a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md border border-line-bright bg-surface-2/70 px-6 py-3.5 text-base text-ink transition-colors hover:border-cyan/60 hover:text-cyan"
-                >
-                  <FileText size={16} />
-                  Résumé
-                </a>
-              )}
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-line-bright bg-surface-2/70 px-6 py-3.5 text-base text-ink transition-colors hover:border-cyan/60 hover:text-cyan"
+              >
+                <FileText size={16} />
+                Résumé
+              </a>
             </motion.div>
 
             <motion.div {...fadeUp(0.48)} className="mt-6 sm:mt-10 flex items-center gap-5 text-ink-dim">
