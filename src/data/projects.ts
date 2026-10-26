@@ -231,6 +231,9 @@ export const experience: ExperienceItem[] = [
       "Benchmarked edge SoCs with hardware accelerators (NavQPlus i.MX8M Plus, Luckfox, RDK, Milk-V) for embedded AI deployment.",
       "Engineered region-of-interest (ROI) tracking systems for real-time person and vehicle monitoring.",
     ],
+    demos: [
+      { label: "Internship Letter", url: "https://drive.google.com/file/d/1rZS_nh_NK_0wbHffgdrT0RBjPw8CG0dg/view?usp=sharing" },
+    ],
   },
   {
     id: "ers",
