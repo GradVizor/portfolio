@@ -26,7 +26,7 @@ export default function About() {
           </p>
           <p className="mt-5 text-base leading-relaxed text-ink-dim sm:text-lg">
             Now a full-time <span className="text-ink">Robotics Engineer</span> at{" "}
-            <span className="text-ink">ZenithraTech (MapmyIndia)</span>, contributing to the end-to-end
+            <span className="text-ink">MapmyIndia (ZenithraTech)</span>, contributing to the end-to-end
             development and deployment of defense-grade UAV features. Away from the bench, I led the{" "}
             <span className="text-ink">Electronics and Robotics Society</span> at IIIT Jabalpur —
             running 20+ workshops and mentoring 250+ enthusiasts.

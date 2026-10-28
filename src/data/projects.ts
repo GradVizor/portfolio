@@ -204,7 +204,7 @@ export const experience: ExperienceItem[] = [
   {
     id: "zenithra-fte",
     title: "Robotics Engineer",
-    org: "ZenithraTech (MapmyIndia)",
+    org: "MapmyIndia (ZenithraTech)",
     location: "New Delhi",
     duration: "Jul 2026 — Present",
     type: "INDUSTRY",
@@ -219,7 +219,7 @@ export const experience: ExperienceItem[] = [
   {
     id: "zenithra",
     title: "Robotics Intern",
-    org: "ZenithraTech (MapmyIndia)",
+    org: "MapmyIndia (ZenithraTech)",
     location: "New Delhi",
     duration: "May 2025 — Jun 2026",
     type: "INDUSTRY",
@@ -292,7 +292,7 @@ export const aboutFacts = [
   {
     k: "ROLE",
     v: "Robotics Engineer",
-    d: "Full-time at ZenithraTech (MapmyIndia), New Delhi",
+    d: "Full-time at MapmyIndia (ZenithraTech), New Delhi",
   },
   {
     k: "COMMUNITY",
